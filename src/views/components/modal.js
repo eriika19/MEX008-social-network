@@ -23,7 +23,7 @@ const modal = {
             <i class="material-icons circle red">delete</i>
             <span class="title">Eliminar</span>
             <p>Eliminar</p>
-            <a href="#!" class="secondary-content">
+            <a href="#!" class="secondary-content" id="confirmDelete">
               <i class="material-icons">delete</i>
             </a>
           </li>
@@ -35,3 +35,27 @@ const modal = {
   after_render: () => {}
 };
 export default modal;
+
+/*Función JS*/
+const confirmDelete= document.getElementById("confirmDelete");
+​
+const deletePub = () => {
+  Swal.fire({
+    title: 'Eliminar',
+    text: "¿Quieres eliminar esta publicación?",
+    type: 'warning',
+    showCancelButton: true,
+    cancelButtonText: 'No',
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si'
+  }).then((result) => {
+    if (result.value) {
+      Swal.fire(
+        'Tu publicación ha sido eliminada.',
+      )
+    }
+  })
+};
+​
+confirmDelete.addEventListener("click", deletePub);
