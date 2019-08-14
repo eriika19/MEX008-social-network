@@ -3,7 +3,7 @@ const sidebar = {
     return `
     <nav> 
     <a id="side-trigger" href="#" data-target="slide-out" class="sidenav-trigger">
-    <img id="pic-trigger" class="circle" src="img/readme/ramona.png"></a>
+    <i class="material-icons">menu</i></a>
     </nav>
     <ul id="slide-out" class="sidenav">
       <li>
