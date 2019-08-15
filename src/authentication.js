@@ -57,6 +57,7 @@
     ],
   });
   
+<<<<<<< HEAD
   //Inicializando facebook
   const provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -109,6 +110,9 @@
       }
     });
 
+=======
+  
+>>>>>>> upstream/master
 
 /*   db.collection("posts").add({
     uid: 'PcJkrcAcJ3dUxIJ6CHDP6Ak1Dwy1',
