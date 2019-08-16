@@ -1,14 +1,12 @@
 const sidebar = {
   render: async () => {
     let user = firebase.auth().currentUser;
-    let name, email;
+    let name, email, photoUrl;
     
     if (user != null) {
       name = user.displayName;
       email = user.email;
-/*       photoUrl = user.photoURL;
-      emailVerified = user.emailVerified;
-      uid = user.uid;  */ 
+      photoUrl = user.photoURL;
     }
 
 
@@ -23,7 +21,7 @@ const sidebar = {
           <div class="background">
             <!-- <img src="img/bike-day.jpg">-->
           </div>
-          <a><img class="circle" src="img/readme/ramona.png"></a>
+          <a><img class="circle" src="${photoUrl}"></a>
           <a><span class="white-text name">${name}</span></a>
           <a><span class="white-text email">${email}</span></a>
         </div>
@@ -36,15 +34,24 @@ const sidebar = {
       <li><a class="subheader">Directorio</a></li>
       <li><a class="waves-effect" href="#/workshops"><i class="material-icons">motorcycle</i>Talleres</a></li>
       <li><a class="waves-effect" href="#/shops"><i class="material-icons">loyalty</i>Tiendas</a></li>
-      <li class="right"><a id="sos" class="waves-effect right-align" href="#/sos"><i class="material-icons">report_problem</i>S.O.S.</a>
-      </li>
-      <li class="right">
+      <li class="right"><a id="sos" class="waves-effect right-align" href="#/sos"><i class="material-icons">report_problem</i>S.O.S.</a></li>     
+      <li id="divider-final">
         <div class="divider"></div>
       </li>
       <li class="right"><a id="sign-out" class="waves-effect">Cerrar Sesión</a></li>
     </ul>
     `;
   },
-  after_render: () => {}
+  after_render: () => {
+    //Inicializando sidebar
+    const btnCollapse = document.querySelectorAll(".sidenav");
+    M.Sidenav.init(btnCollapse);
+
+    //agregando chismosa para 'sign-out'
+    document.getElementById("sign-out").addEventListener("click", () => {
+      firebase.auth().signOut();
+    });
+
+  }
 };
 export default sidebar;
