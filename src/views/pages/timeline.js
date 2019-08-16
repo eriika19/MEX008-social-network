@@ -1,9 +1,10 @@
-import elementLI from "../components/elementLI.js";
+// import elementLI from "../components/elementLI.js";
 //import Utils from "../../services/Utils.js";
 
 const timeline = {
   render: async () => {
     return ` 
+    <section id="timeline">
     <div id="post-list" class="col s12 m7">
     <h5>Posts</h5>     
       <!-- Post cards -->
@@ -17,7 +18,7 @@ const timeline = {
               <p>¿Estás seguro de querer eliminar esta publicación?</p>
           </div>
           <div class="modal-footer">
-              <a href="#/timeline" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+              <a href="#/timeline" class="modal-close waves-effect waves-green btn-flat" onclick ="deletePublication('yvfChZEcxmiTXRk9O9f9')">Aceptar</a>
               <a href="#/timeline" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
           </div>
       </div>
@@ -41,17 +42,18 @@ const timeline = {
               <a id="send-btn" href="#/timeline" class="modal-close waves-effect waves-green btn-flat">Publicar</a>
           </div>
       </div>
+      </section>
       `;
   },
 
 
   after_render: () => {
     let postList = document.getElementById("post-list");
-  db.collection("posts").onSnapshot((querySnapshot) => { 
-    postList.innerHTML = "";
-    querySnapshot.forEach((post) => {
-      console.log(`${post.id} => ${post.data().textPost}`);
-      postList.innerHTML += `
+    db.collection("posts").onSnapshot((querySnapshot) => {
+      postList.innerHTML = "";
+      querySnapshot.forEach((post) => {
+        console.log(`${post.id} => ${post.data().textPost}`);
+        postList.innerHTML += `
       <div class="card horizontal" style="overflow: visible;">
 
           <div class="card-image waves-effect waves-block waves-light" data-pid="${post.id}" data-uid="${post.data().uid}">
@@ -85,8 +87,8 @@ const timeline = {
 
                   <li class="collection-item avatar">
                       <!-- Modal Confirmation-delete Trigger -->
-                      <a class="modal-trigger" href="#modalConfirmation">
-                          <span class="title">Eliminar</span>
+                      <a class="modal-trigger btn-delete" href="#modalConfirmation">
+                          <span class="title">Eliminar</span> ${post.id}
                           <i class="material-icons circle red">delete</i>
                       </a>
                   </li>
@@ -95,11 +97,41 @@ const timeline = {
           
       </div>
       `;
+      });
     });
-  });
     //Inicializando modales   
     const modals = document.querySelectorAll('.modal');
     M.Modal.init(modals);
+
+    const clickDelete = async (e) => {
+      if (e.target.tagName !== "A" || !e.target.classList.contains('btn-delete')) {
+        return;
+      }
+      const id = e.target.dataset.pid;
+      deletePublication(id);
+    };
+    const timeline = document.getElementById('timeline');
+
+
+    // Función para eliminar post
+    function deletePublication(id){
+      db.collection("posts").post(id).delete().then(function(){
+        console.log("¡Documento eliminado con éxito!");
+      }).catch(function (error){
+        console.error("Error al eliminar el documento:", error);
+      });
+    }
+    
+
+    // Función para eliminar post
+    // const deletePublication = (id) => {
+    //   db.collection("posts").post(id).delete().then(function(){
+    //     console.log("¡Documento eliminado con éxito!");
+    //   }).catch(function (error){
+    //     console.error("Error al eliminar el documento:", error);
+    //   });
+    // }
+    // timeline.addEventListener('click', clickDelete);
   },
 };
 
