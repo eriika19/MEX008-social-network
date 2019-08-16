@@ -1,10 +1,16 @@
-// import elementLI from "../components/elementLI.js";
 //import Utils from "../../services/Utils.js";
+import savePost from "../../lib/index.js";
 
 const timeline = {
   render: async () => {
     return ` 
+    <!-- Modal Form Trigger -->
+    <div class="fix">
+    <a id="add-btn" class="btn-floating btn-large waves-effect waves-light btn modal-trigger teal"
+        href="#modalForm"><i class="material-icons">add</i></a>
+    </div>
     <section id="timeline">
+
     <div id="post-list" class="col s12 m7">
     <h5>Posts</h5>     
       <!-- Post cards -->
@@ -23,10 +29,6 @@ const timeline = {
           </div>
       </div>
 
-      <!-- Modal Form Trigger -->
-      <a id="add-btn" class="btn-floating btn-large waves-effect waves-light btn modal-trigger teal right"
-          href="#modalForm"><i class="material-icons">add</i></a>
-
       <!-- Modal Form Structure -->
       <div id="modalForm" class="modal modal-fixed-footer">
           <div class="modal-content">
@@ -39,34 +41,36 @@ const timeline = {
           </div>
           <div class="modal-footer">
               <a href="#/timeline" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
-              <a id="send-btn" href="#/timeline" class="modal-close waves-effect waves-green btn-flat">Publicar</a>
+              <a id="add" href="#/timeline" class="modal-close waves-effect waves-green btn-flat">Publicar</a>
           </div>
       </div>
-      </section>
+      <section>
       `;
   },
 
 
   after_render: () => {
     let postList = document.getElementById("post-list");
-    db.collection("posts").onSnapshot((querySnapshot) => {
-      postList.innerHTML = "";
-      querySnapshot.forEach((post) => {
-        console.log(`${post.id} => ${post.data().textPost}`);
-        postList.innerHTML += `
+  db.collection("posts").onSnapshot((querySnapshot) => { 
+    postList.innerHTML = "";
+    querySnapshot.forEach((post) => {
+      let d = new Date(post.data().date);
+      let date = d.toDateString();
+     // console.log(`${post.id} => ${post.data().textPost}`);
+      postList.innerHTML += `
       <div class="card horizontal" style="overflow: visible;">
 
           <div class="card-image waves-effect waves-block waves-light" data-pid="${post.id}" data-uid="${post.data().uid}">
-              <img src="https://lorempixel.com/100/190/nature/6">
+              <img src="${post.data().photo}">
           </div>
 
           <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">${post.data().displayName}<i
+              <span class="card-title activator grey-text text-darken-4">${post.data().displayName} ${post.data().emailVerified}<i
                       class="material-icons">more_vert</i></span>
               <p>${post.data().textPost}</p>
-              <p>${post.data().date}</p>
               <div class="card-action section">
-              <p>${post.data().likes}</p><i class="material-icons right">favorite_border</i>
+              <p>${date}</p>
+              <a class="waves-effect" href="#/timeline"><i class="material-icons">favorite_border</i>${post.data().likes}</a>
               </div>
           </div>
 
@@ -99,6 +103,15 @@ const timeline = {
       `;
       });
     });
+  });
+
+  const addBtn = document.getElementById('add');
+  addBtn.addEventListener('click', () =>{
+    savePost();
+  }
+  )
+
+
     //Inicializando modales   
     const modals = document.querySelectorAll('.modal');
     M.Modal.init(modals);
