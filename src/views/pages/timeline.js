@@ -77,12 +77,18 @@ const timeline = {
        let user = firebase.auth().currentUser;
         
         querySnapshot.forEach((post) => {
+          let likeBtn = "favorite_border";
           let moreBtn = "";
           let cardReveal = "";
           let date = ""; 
+          let likesArr = post.data().likes;
+
+          if (likesArr.indexOf(user.uid) > -1 ) {
+            likeBtn = "favorite";
+          };
 
           if (user.uid == post.data().uid) {
-            moreBtn = `<i class="material-icons">more_vert</i>`
+            moreBtn = `<i class="material-icons">more_vert</i>`;
           };
 
           if (user.uid == post.data().uid) {
@@ -134,7 +140,7 @@ const timeline = {
               <span class="card-title activator grey-text text-darken-4">${post.data().displayName} ${post.data().emailVerified} ${moreBtn}</span>
               <p>${post.data().textPost}</p>
               <div class="card-action section">
-              <a class="waves-effect like" href="#/timeline" data-id="${post.id}"><i class="material-icons like" data-id="${post.id}">favorite_border</i>${(post.data().likes).length}</a>      ${date}
+              <a class="waves-effect like" href="#/timeline" data-id="${post.id}"><i class="material-icons like" data-id="${post.id}">${likeBtn}</i>${(post.data().likes).length}</a>      ${date}
               </div>
           </div>
           ${cardReveal}
