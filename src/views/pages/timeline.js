@@ -66,7 +66,7 @@ const timeline = {
 
     after_render: () => {
       //Declarando variables para editar y eliminar
-      let idDelete, idEdit;
+      let idDelete, idEdit, idLike;
       const textareaEdit = document.getElementById('textarea-edit');
 
 
@@ -74,50 +74,70 @@ const timeline = {
 
       db.collection("posts").onSnapshot((querySnapshot) => {
         postList.innerHTML = "";
+       let user = firebase.auth().currentUser;
+        
         querySnapshot.forEach((post) => {
-          let d = new Date(post.data().date);
-          let date = d.toDateString();
-          postList.innerHTML += `
-      <div class="card horizontal" style="overflow: visible;">
+          let moreBtn = "";
+          let cardReveal = "";
+          let date = ""; 
+
+          if (user.uid == post.data().uid) {
+            moreBtn = `<i class="material-icons">more_vert</i>`
+          };
+
+          if (user.uid == post.data().uid) {
+            cardReveal = `
+            <div class="card-reveal" style="display: none; transform: translateY(0%);">
+            <li class=" card-title">
+                <span class="title"></span>
+                <i class="material-icons right">close</i>
+            </li>
+
+            <ul class="collection">
+                <li class="collection-item avatar">
+                    <!-- Modal Form Trigger -->
+                    <a class="modal-trigger" href="#modalEdit">
+                        <span class="title edit" data-id="${post.id}">Editar</span>
+                        <i class="material-icons waves-effect waves-light circle orange">edit</i>
+                    </a>
+                </li>
+
+                <li class="collection-item avatar">
+                    <!-- Modal Confirmation-delete Trigger -->
+                    <a class="modal-trigger" href="#modalConfirmation">
+                        <span class="title delete" data-id="${post.id}">Eliminar</span>
+                        <i class="material-icons circle red">delete</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+            `
+          };
+          
+          if (post.data().editDate !== "") {
+            const editD = new Date(post.data().editDate);
+            const editDate = editD.toDateString();    
+            date = `Editado: ${editDate}`;
+          } else {            
+            const d = new Date(post.data().date);
+            date = d.toDateString();
+          };
+
+  postList.innerHTML += `
+      <div class="card horizontal" style="overflow: visible;" data-uid="${post.data().uid}" data-id="${post.id}">
 
           <div class="card-image waves-effect waves-block waves-light">
               <img src="${post.data().photo}">
           </div>
 
           <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">${post.data().displayName} ${post.data().emailVerified}<i
-                      class="material-icons">more_vert</i></span>
+              <span class="card-title activator grey-text text-darken-4">${post.data().displayName} ${post.data().emailVerified} ${moreBtn}</span>
               <p>${post.data().textPost}</p>
               <div class="card-action section">
-              <a class="waves-effect" href="#/timeline"><i class="material-icons">favorite_border</i>${post.data().likes}</a>      ${date}
+              <a class="waves-effect like" href="#/timeline" data-id="${post.id}"><i class="material-icons like" data-id="${post.id}">favorite_border</i>${(post.data().likes).length}</a>      ${date}
               </div>
           </div>
-
-          <div class="card-reveal" style="display: none; transform: translateY(0%);">
-              <li class=" card-title">
-                  <span class="title"></span>
-                  <i class="material-icons right">close</i>
-              </li>
-
-              <ul class="collection">
-                  <li class="collection-item avatar">
-                      <!-- Modal Form Trigger -->
-                      <a class="modal-trigger" href="#modalEdit">
-                          <span class="title edit" data-id="${post.id}" data-uid="${post.data().uid}">Editar</span>
-                          <i class="material-icons waves-effect waves-light circle orange">edit</i>
-                      </a>
-                  </li>
-
-                  <li class="collection-item avatar">
-                      <!-- Modal Confirmation-delete Trigger -->
-                      <a class="modal-trigger" href="#modalConfirmation">
-                          <span class="title delete" data-id="${post.id}" data-uid="${post.data().uid}">Eliminar</span>
-                          <i class="material-icons circle red">delete</i>
-                      </a>
-                  </li>
-              </ul>
-          </div>
-          
+          ${cardReveal}
       </div>
       `;
         });
@@ -125,6 +145,7 @@ const timeline = {
 
       //reglas para manejar clicks
       const handleClick = async (e) => {
+       // console.log(e.target.tagName);
         if (e.target.tagName == "SPAN" && e.target.classList.contains('delete')) {
           idDelete = e.target.dataset.id;
         };
@@ -135,7 +156,7 @@ const timeline = {
 
           postEdit.get().then(function (post) {
               if (post.exists) {
-                document.getElementById('textarea-edit').value = post.data().textPost;
+                textareaEdit.value = post.data().textPost;
             } else {
               // doc.data() will be undefined in this case
               console.log("No such document!");
@@ -143,6 +164,11 @@ const timeline = {
           }).catch(function (error) {
           console.log("Error getting document:", error);
         });
+      };
+
+      if ((e.target.tagName == "A" && e.target.classList.contains('like')) || (e.target.tagName == "I" && e.target.classList.contains('like')) ) {
+        idLike = e.target.dataset.id;
+        Utils.likePost(idLike);
       };
     };
 
@@ -169,6 +195,29 @@ const timeline = {
 
     //agregando "chismosas para post-list"
     postList.addEventListener('click', handleClick)
+
+
+/*        const postToEdit = db.collection("posts").doc('OqaTwUnen0u8ozc5Tluq');
+      const posTEdit = db.collection("posts").doc('RvXJbY20LPexbqRBwowr');
+      const posTEdi = db.collection("posts").doc('ciVTZM1Z0V4RrtT3Nph9');
+      const edDate = '';
+
+      const updatePost = (post) => {
+        return post.update({
+        editDate: edDate,
+      })
+      .then(function() {
+          console.log("Document successfully updated!");
+      })
+      .catch(function(error) {
+          // The document probably doesn't exist.
+          console.error("Error updating document: ", error);
+      });
+    }; 
+
+     updatePost(postToEdit);
+    updatePost(posTEdit);
+    updatePost(posTEdi);  */
   },
 };
 
