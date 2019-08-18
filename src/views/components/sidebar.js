@@ -9,11 +9,10 @@ const sidebar = {
       photoUrl = user.photoURL;
     }
 
-
     return `
     <nav> 
     <a id="side-trigger" href="#" data-target="slide-out" class="sidenav-trigger">
-    <i id="menu" class="material-icons">menu</i></a>
+    <i id="menu" class="material-icons">view_list</i></a>
     </nav>
     <ul id="slide-out" class="sidenav">
       <li>
@@ -26,14 +25,18 @@ const sidebar = {
           <a><span class="white-text email">${email}</span></a>
         </div>
       </li>
+      <li><a href="#/timeline"><i class="material-icons">home</i>Timeline</a></li>
+      <li>
+      <div class="divider"></div>
+    </li>
       <li><a href="#/profile"><i class="material-icons">account_circle</i>Perfil</a></li>
       <li><a href="#/settings"><i class="material-icons">settings</i>Configuración</a></li>
       <li>
         <div class="divider"></div>
       </li>
       <li><a class="subheader">Directorio</a></li>
-      <li><a class="waves-effect" href="#/workshops"><i class="material-icons">motorcycle</i>Talleres</a></li>
       <li><a class="waves-effect" href="#/shops"><i class="material-icons">loyalty</i>Tiendas</a></li>
+      <li><a class="waves-effect" href="#/workshops"><i class="material-icons">build</i>Talleres de reparación</a></li>
       <li class="right"><a id="sos" class="waves-effect right-align" href="#/sos"><i class="material-icons">report_problem</i>S.O.S.</a></li>     
       <li id="divider-final">
         <div class="divider"></div>
@@ -51,7 +54,7 @@ const sidebar = {
     document.getElementById("sign-out").addEventListener("click", () => {
       firebase.auth().signOut();
     });
-
-  }
+  },
 };
+
 export default sidebar;

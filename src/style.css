@@ -64,8 +64,6 @@ h5 {
 
 footer {
     height: 7vh;
-    background-color: #73ECEF;
-
 }
 
 /* SECCIONES */
@@ -77,7 +75,7 @@ footer {
 
 main section {
     padding-top: 3vh;
-    height: 84vh;
+    min-height: 84vh;
 }
 
 #intro-container {
@@ -94,11 +92,7 @@ main section {
 #firebaseui-auth-container {
     margin-top: 1.8rem;
 }
-/*
-.sidenav-overlay{
-    display: none !important;
-}
-*/
+
 /* BOTONES */
 .firebaseui-idp-button {
     border-radius: 1rem;
@@ -150,6 +144,14 @@ nav .sidenav-trigger {
     overflow-y: hidden !important;
 }
 
+ .fix {
+    position: fixed;
+    z-index: 1000;
+}
+
+#add-btn{
+    margin-left: 80vw;
+}
 
 /* IMÁGENES */
 
@@ -180,8 +182,6 @@ figure {
     width: 10rem;
     padding-top: 1rem;
 }
-
-
 
 
 @media only screen and (min-width: 760px) {
