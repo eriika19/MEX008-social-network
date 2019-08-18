@@ -63,7 +63,6 @@ const timeline = {
       `;
     },
 
-
     after_render: () => {
       //Declarando variables para editar y eliminar
       let idDelete, idEdit, idLike;
@@ -178,7 +177,7 @@ const timeline = {
       };
     };
 
-    //Funciones para manipular collecion 'posts'
+    //Funciones para manipular coleccion 'posts'
     const add = document.getElementById('add');
     add.addEventListener('click', () => {
       Utils.savePost();
@@ -188,7 +187,6 @@ const timeline = {
     confirmation.addEventListener('click', () => {
       Utils.deletePost(idDelete);
     });
-
 
     const edit = document.getElementById('edit');
     edit.addEventListener('click', () => {
@@ -201,29 +199,6 @@ const timeline = {
 
     //agregando "chismosas para post-list"
     postList.addEventListener('click', handleClick)
-
-
-/*        const postToEdit = db.collection("posts").doc('OqaTwUnen0u8ozc5Tluq');
-      const posTEdit = db.collection("posts").doc('RvXJbY20LPexbqRBwowr');
-      const posTEdi = db.collection("posts").doc('ciVTZM1Z0V4RrtT3Nph9');
-      const edDate = '';
-
-      const updatePost = (post) => {
-        return post.update({
-        editDate: edDate,
-      })
-      .then(function() {
-          console.log("Document successfully updated!");
-      })
-      .catch(function(error) {
-          // The document probably doesn't exist.
-          console.error("Error updating document: ", error);
-      });
-    }; 
-
-     updatePost(postToEdit);
-    updatePost(posTEdit);
-    updatePost(posTEdi);  */
   },
 };
 

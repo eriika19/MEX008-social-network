@@ -64,8 +64,6 @@ h5 {
 
 footer {
     height: 7vh;
-    /* background-color: #73ECEF; */
-
 }
 
 /* SECCIONES */
@@ -94,11 +92,7 @@ main section {
 #firebaseui-auth-container {
     margin-top: 1.8rem;
 }
-/*
-.sidenav-overlay{
-    display: none !important;
-}
-*/
+
 /* BOTONES */
 .firebaseui-idp-button {
     border-radius: 1rem;
@@ -188,8 +182,6 @@ figure {
     width: 10rem;
     padding-top: 1rem;
 }
-
-
 
 
 @media only screen and (min-width: 760px) {

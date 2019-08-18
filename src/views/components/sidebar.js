@@ -9,7 +9,6 @@ const sidebar = {
       photoUrl = user.photoURL;
     }
 
-
     return `
     <nav> 
     <a id="side-trigger" href="#" data-target="slide-out" class="sidenav-trigger">
@@ -55,7 +54,7 @@ const sidebar = {
     document.getElementById("sign-out").addEventListener("click", () => {
       firebase.auth().signOut();
     });
-
-  }
+  },
 };
+
 export default sidebar;

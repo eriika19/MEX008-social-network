@@ -21,16 +21,7 @@ const profile = {
         if (user.emailVerified == true) {
           verified = `<a class="waves-effect"><i class="material-icons tiny">verified_user</i></a>`; 
         };
-/*         if (user.phoneNumber !== null) {
-          phone = user.phoneNumber; 
-        };
-        if (user.i !== null) {
-          description = user.i; 
-        }; */
-      }
-
-      
-
+      };
 
       return `
       <section id="profile">
