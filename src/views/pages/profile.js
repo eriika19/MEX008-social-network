@@ -3,6 +3,16 @@ const profile = {
       let user = firebase.auth().currentUser;
       let verified = '';
       let name, email, photo;
+
+/*  Función para actualizar perfil
+     user.updateProfile({
+        displayName: "Ramona",
+        photoURL: "img/readme/ramona.png"
+      }).then(function() {
+        console.log('Update successful');
+      }).catch(function(error) {
+        console.log('Update error');
+      }); */
       
       if (user != null) {
         name = user.displayName;
@@ -12,6 +22,9 @@ const profile = {
           verified = `<a class="waves-effect"><i class="material-icons tiny">verified_user</i></a>`; 
         };
       }
+
+      
+
 
       return `
       <section id="profile">
@@ -30,9 +43,7 @@ const profile = {
       </div>
       </div>
       <br>
-      <h6>Hola soy Ramona Díaz, actualmente  soy estudiante de Diseño en UAM Azcapotzalco
-      me considero una persona alegre, decidida y que en su tiempo libre, ama rodar
-      por la ciudad de México</h6>
+      <h6></h6>
     </section>
           `;
     },
