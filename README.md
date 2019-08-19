@@ -157,6 +157,8 @@ Las principales observaciones de los usuarios fueron:
 - Al intentar editar a veces no aparece el texto de la publicación que se quiere modificar, en otras ocasiones aparece otro mensaje.
 - Las publicaciones se ordenan aleatoriamente.
 
+Planeamos tomar en cuenta estos comentarios para futuros alcances de nuestro proyecto.
+
 
 
 
