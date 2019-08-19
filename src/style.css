@@ -114,6 +114,10 @@ nav .sidenav-trigger {
     margin-left: .6rem;
 }
 
+.sidenav-overlay {
+    display: none !important;
+}
+
 #sos {
     margin-top: 18vh;
 }
