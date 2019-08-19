@@ -155,7 +155,7 @@ Las principales observaciones de los usuarios fueron:
 - La página es rápida
 - El fondo se pone obscuro como si el menú lateral siguiera abierto, y no se quita hasta hasta hacer scroll
 - Al intentar editar a veces no aparece el texto de la publicación que se quiere modificar, en otras ocasiones aparece otro mensaje.
-- Las publicaciones se ordenan aleatoriamente
+- Las publicaciones se ordenan aleatoriamente.
 
 
 
