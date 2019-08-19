@@ -1,8 +1,10 @@
 # Sacbé
 
-##Contexto
+## Contexto
 
-![bici](src/img/image_16.jpeg)
+![bici](/src/img/image_16.jpeg)
+
+
 En la Ciudad de México, donde hay poco más de dos millones de carros circulan a diario poco más de un millón, con un transporte público colapsado y carísimo, la bicicleta es el transporte más barato y el que se desplaza a mayor velocidad en horas pico.
 
 La mitad de los viajes en bicicleta en esta urbe son de menos de 8 kilómetros y duran menos de 20 minutos, y, en promedio, la bicicleta se usa entre 25 y 35 minutos.
@@ -19,7 +21,7 @@ La bicicleta es una opción viable, eficiente, de bajo costo y rápida en distan
 
 La disminución del uso del automóvil y del transporte público por el uso de la bicicleta (especialmente en viajes intermedios para ir a comer, hacer trámites…) tiene un efecto positivo sobre el medio ambiente. Y en la Ciudad de México, buena parte de los viajes se pueden hacer en bicicleta
 
-##Problema
+## Problema
 
 Según el recuento no oficial realizado por grupos de activistas, en 2018 fallecieron 18 ciclistas en la CDMX por accidentes de tránsito.
 
@@ -27,7 +29,7 @@ Comúnmente tendemos a creer la idea, equivocada, de que los automóviles son la
 
 ##User Persona
 
-![Ramona](src/img/Ramona Díaz.png)
+![Ramona](/src/img/Ramona Díaz.png)
 
 ## Definición del producto
 
@@ -39,7 +41,7 @@ Sacbé una Red Social para el ciclista que busca mantenerse conectado, crear ví
 
 ## Prototipo de baja fidelidad
 
-Construimos un primer ![prototipo](https://marvelapp.com/56f42d4/screen/59966204) de baja fidelidad en MarvelApp.
+Construimos un primer [prototipo](https://marvelapp.com/56f42d4/screen/59966204) de baja fidelidad en MarvelApp.
 
 Los comentarios que obtuvimos acerca de este fueron:
 
@@ -51,7 +53,7 @@ En consecuencia, decidimos dividir el directorio en dos secciones "Talleres" y "
 
 ## Prototipo de alta fidelidad
 
-Tomando en cuenta el feedback anterior, construimos un ![prototipo](https://www.figma.com/proto/MMsy7ojEalu6q6QwTFCw5s/Red-social-bike?node-id=53%3A13&scaling=scale-down) de alta fidelidad en Figma.
+Tomando en cuenta el feedback anterior, construimos un [prototipo](https://www.figma.com/proto/MMsy7ojEalu6q6QwTFCw5s/Red-social-bike?node-id=53%3A13&scaling=scale-down) de alta fidelidad en Figma.
 
 Los comentarios que obtuvimos sobre este prototipo, fueron en general que era bastante intuitiva. Algunas observaciones fueron acerca de:
 -No se intuía en todos los casos que la foto del usuario en la sección superior izquierda desplegaba un menú lateral.
