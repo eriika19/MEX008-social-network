@@ -86,9 +86,7 @@ const timeline = {
 
           if (user.uid == post.data().uid) {
             moreBtn = `<i class="material-icons">more_vert</i>`;
-          };
 
-          if (user.uid == post.data().uid) {
             cardReveal = `
             <div class="card-reveal" style="display: none; transform: translateY(0%);">
             <li class=" card-title">
