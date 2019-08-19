@@ -132,11 +132,13 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 - Se hicieron pruebas de usuabilidad y se implementó el feedback si se consideró necesario.
 
 5. Como usuario quiero poder darle like a una publicación de un evento que me gustó.
+
   **Criterios de aceptación**
 - Poder darle like a una publicación
 - Poder quitarle like a una publicación
 - Un usuario puede dar máximo un like en una publicación
 - Llevar un conteo de los likes
+
   **Definición de terminado**
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
