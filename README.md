@@ -25,16 +25,17 @@ Según el recuento no oficial realizado por grupos de activistas, en 2018 fallec
 
 Comúnmente tendemos a creer la idea, equivocada, de que los automóviles son la principal amenaza para las personas que usan la bicicleta para transportarse en grandes ciudades. La mala calidad del pavimento, los baches, las alcantarillas abiertas, grietas, las inundaciones y los topes mal hechos, son un riesgo constante para ellos.
 
+##User Persona
 
+![Ramona](src/img/Ramona Díaz.png)
+
+## Definición del producto
 
 Los usuarios de Sacbé son personas que disfrutan de la movilidad que les da una bicicleta, pero que también quieren crear vínculos con otros ciclistas, crear comunidad para poder compartir información que les permita llegar a su destino de una manera rápida y segura.
-
-##Propuesta
 
 La solución que proponemos para los ciclistas es: Sacbé. Sacbé es un camino recto, elevado, sin desniveles y pavimentado construido por los mayas prehispánicos.
 
 Sacbé una Red Social para el ciclista que busca mantenerse conectado, crear vínculos con otros ciclistas, mantenerse informado de eventos, rodadas, bloqueos, inundaciones, baches, etc...Y que además le permite solicitar ayuda de otros miembros de la comunidad en caso de algún incidente.
-
 
 ## Prototipo de baja fidelidad
 
@@ -58,4 +59,36 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 
 ## Historias de Usuario
 
-1. 
+Como usuario nuevo debo poder crear una cuenta con email y password para poder iniciar sesion. Por otro lado, necesito también tener la opción de iniciar sesión con mi cuenta de Google o Facebook.
+  **Criterios de aceptación**
+- Si el mail o password no es válido, al momento de logearme, debo poder ver un mensaje de error.
+- Debe ser visible si hay algún mensaje de error.
+- Debo poder ver esta página de creación en Móviles y desktop (responsive).
+- No debe necesitar recargar la página para crear una cuenta (SPA).
+  **Definición de terminado**
+- La funcionalidad cumple/satisface los criterios de aceptación.
+- La funcionalidad tiene test unitarios.
+- El diseño visual corresponde al prototipo de alta fidelidad.
+- El código de esta funcionalidad recibió code review.
+- La funcionalidad esta desplegada y pública para ser probada.
+- La funcionalidad fue probada manualmente.
+- Se hicieron pruebas de usuabilidad y se implementó el feedback si se consideró necesario.
+
+Como usuario, una vez que ya ingrese con mi cuenta, quiero poder crear una publicación para invitar a los otros ciclistas a una rodada
+  **Criterios de aceptación**
+  **Definición de terminado**
+
+Como usuario quiero poder editar una publicación, ya que me equivoqué al publicar la hora de la rodada y quiero corregir la hora.
+  **Criterios de aceptación**
+  **Definición de terminado**
+
+Como usuario, quiero poder eliminar una publicación que hice porque me di cuenta que el evento que compartí ya pasó.
+  **Criterios de aceptación**
+  **Definición de terminado**
+
+Como usuario quiero poder darle like a una publicación de un evento que me gustó.
+  **Criterios de aceptación**
+  **Definición de terminado**
+
+
+
