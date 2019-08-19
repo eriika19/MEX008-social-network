@@ -1,5 +1,7 @@
 # Sacbé
 
+---
+
 ## Índice
 
 - [Contexto](#contexto)
@@ -19,13 +21,13 @@
 
 ## Contexto
 
-En la Ciudad de México, donde hay poco más de dos millones de carros circulan a diario poco más de un millón, con un transporte público sumamente ineficiente e inseguro, la bicicleta es el transporte más barato y el que se desplaza a mayor velocidad en horas pico.
+En la Ciudad de México, donde hay poco más de dos millones de carros circulan a diario poco más de un millón. Con las ventajas de que es el transporte más barato y el que se desplaza a mayor velocidad en horas pico.
+
+![bike-muppets](/src/img/readme/giphy-muppets.gif)
 
 La mitad de los viajes en bicicleta en esta urbe son de menos de 8 kilómetros y duran menos de 20 minutos, y, en promedio, la bicicleta se usa entre 25 y 35 minutos.
 
 En cuanto al clima, es propicio para el transporte en bicicleta: en época de calor. Cuando la temperatura no sobrepasa los 31 ó 32 °C; y, en época de frío, los días con menos de 11 grados centígrados no son muchos.
-
-![bike-muppets](/src/img/readme/giphy-muppets.gif)
 
 Y aunque la lluvia hace que disminuya el número de viajes en bicicleta, es predecible: en verano empieza a llover en la tarde. Así pues, quienes salen en bicicleta en la mañana, regresan a su casa un poco tarde, después de que la lluvia ya pasó.
 
@@ -33,9 +35,9 @@ Además, la mayor actividad laboral de la Ciudad de México (85%) se desarrolla 
 
 Actualmente, del total de la movilidad vial en la Ciudad de México, el transporte en bicicleta representa 2.5% (poco menos de 300 mil viajes); hace 10 años representaba 1% (98 mil viajes). Con la duplicación de la infraestructura vial ciclista y una adecuada promoción se espera que los viajes en bicicleta se dupliquen en 2024.
 
-La bicicleta es una opción viable, eficiente, de bajo costo y rápida en distancias cortas, que contribuye a mejorar la movilidad y a hacer de las ciudades espacios sustentables.
-
 ![bike-cdmx](/src/img/image_16.jpeg)
+
+La bicicleta es una opción viable, eficiente, de bajo costo y rápida en distancias cortas, que contribuye a mejorar la movilidad y a hacer de las ciudades espacios sustentables.
 
 La disminución del uso del automóvil y del transporte público por el uso de la bicicleta (especialmente en viajes intermedios para ir a comer, hacer trámites…) tiene un efecto positivo sobre el medio ambiente. Y en la Ciudad de México, buena parte de los viajes se pueden hacer en bicicleta
 
@@ -47,11 +49,11 @@ Comúnmente tendemos a creer la idea, equivocada, de que los automóviles son la
 
 ## Definición del producto
 
-La solución que proponemos para los ciclistas es: Sacbé. Sacbé es un camino recto, elevado, sin desniveles y pavimentado construido por los mayas prehispánicos.
-
-Sacbé una Red Social para el ciclista que busca mantenerse conectado, crear vínculos con otros ciclistas, mantenerse informado de eventos, rodadas, bloqueos, inundaciones, baches, etc...Y que además le permite solicitar ayuda de otros miembros de la comunidad en caso de algún incidente.
+La solución que proponemos para los ciclistas es: _Sacbé_ . Sacbé es un camino recto, elevado, sin desniveles y pavimentado construido por los mayas prehispánicos.
 
 ![bike-girl](/src/img/readme/giphy-bike-girl.gif)
+
+_Sacbé_ una Red Social para el ciclista que busca mantenerse conectado, crear vínculos con otros ciclistas, mantenerse informado de eventos, rodadas, bloqueos, inundaciones, baches, etc...Y que además le permite solicitar ayuda de otros miembros de la comunidad en caso de algún incidente.
 
 ## User Persona
 
@@ -84,13 +86,13 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 ### Primera
  Como usuario nuevo debo poder crear una cuenta con email y password para poder iniciar sesion. Por otro lado, necesito también tener la opción de iniciar sesión con mi cuenta de Google o Facebook.
 
-  `Criterios de aceptación`
+### `Criterios de aceptación`
 - [ ] Si el mail o password no es válido, al momento de logearme, debo poder ver un mensaje de error.
 - [ ] Debe ser visible si hay algún mensaje de error.
 - [ ] Debo poder ver esta página de creación en Móviles y desktop (responsive).
 - [ ] No debe necesitar recargar la página para crear una cuenta (SPA).
 
-  `Definición de terminado`
+### `Definición de terminado`
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
 - El diseño visual corresponde al prototipo de alta fidelidad.
@@ -102,14 +104,14 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 ### Segunda
  Como usuario, una vez que ya ingrese con mi cuenta, quiero poder crear una publicación para invitar a los otros ciclistas a una rodada
 
-  `Criterios de aceptación`
+### `Criterios de aceptación`
 - [ ] Si el input está vacío debo ver algún mensaje de error
 - [ ] Si el input está vacío debo ver algún mensaje de error
 - [ ] Debe ser Responsive
 - [ ] Debe verificar que el usuario este logueado para poder publicar
 - [ ] El mensaje debe mostrarse en el timeline sin necesidad de recargar la página
 
-  `Definición de terminado`
+### `Definición de terminado`
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
 - El diseño visual corresponde al prototipo de alta fidelidad.
@@ -121,7 +123,7 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 ### Tercera
  Como usuario quiero poder editar una publicación, ya que me equivoqué al publicar la hora de la rodada y quiero corregir la hora.
 
-  `Criterios de aceptación`
+### `Criterios de aceptación`
 - [ ] Al dar click para editar un post, debe cambiar el texto por un input
   que permita editar el texto y luego guardar los cambios.
 - [ ] Al guardar los cambios debe cambiar de vuelta a un texto normal pero con la
@@ -130,7 +132,7 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 - [ ] Se debe verificar que el usuario sea el creador de la publicación para poder editar
 - [ ] El mensaje editado debe mostrarse en el timeline sin necesidad de recargar la página
 
-  `Definición de terminado`
+### `Definición de terminado`
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
 - El diseño visual corresponde al prototipo de alta fidelidad.
@@ -143,11 +145,11 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 ### Cuarta
  Como usuario, quiero poder eliminar una publicación que hice porque me di cuenta que el evento que compartí ya pasó.
 
-  `Criterios de aceptación`
+### `Criterios de aceptación`
 - [ ] Poder eliminar un post especifico
 - [ ] Pedir confirmación antes de eliminar un post.
 
-  `Definición de terminado`
+### `Definición de terminado`
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
 - El diseño visual corresponde al prototipo de alta fidelidad.
@@ -159,13 +161,13 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 ### Quinta
  Como usuario quiero poder darle like a una publicación de un evento que me gustó.
 
-  `Criterios de aceptación`
+### `Criterios de aceptación`
 - [ ] Poder darle like a una publicación
 - [ ] Poder quitarle like a una publicación
 - [ ] Un usuario puede dar máximo un like en una publicación
 - [ ] Llevar un conteo de los likes
 
-`Definición de terminado`
+### `Definición de terminado`
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
 - El diseño visual corresponde al prototipo de alta fidelidad.
