@@ -5,8 +5,8 @@
 ## Índice
 
 - [Contexto](#contexto)
-- [Definción del problema](#definición-del-problema)
-- [Definción del producto](#definición-del-producto)
+- [Definición del problema](#definición-del-problema)
+- [Definición del producto](#definición-del-producto)
 - [User Persona](#user-persona)
 - [Diseño de UI](#diseño-de-ui)
 - [Prototipo de baja fidelidad](#prototipo-de-baja-fidelidad)
