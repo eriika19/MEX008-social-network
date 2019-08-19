@@ -86,13 +86,13 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 ### Primera
  Como usuario nuevo debo poder crear una cuenta con email y password para poder iniciar sesion. Por otro lado, necesito también tener la opción de iniciar sesión con mi cuenta de Google o Facebook.
 
-### `Criterios de aceptación`
+#### `Criterios de aceptación`
 - [ ] Si el mail o password no es válido, al momento de logearme, debo poder ver un mensaje de error.
 - [ ] Debe ser visible si hay algún mensaje de error.
 - [ ] Debo poder ver esta página de creación en Móviles y desktop (responsive).
 - [ ] No debe necesitar recargar la página para crear una cuenta (SPA).
 
-### `Definición de terminado`
+#### `Definición de terminado`
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
 - El diseño visual corresponde al prototipo de alta fidelidad.
@@ -104,14 +104,14 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 ### Segunda
  Como usuario, una vez que ya ingrese con mi cuenta, quiero poder crear una publicación para invitar a los otros ciclistas a una rodada
 
-### `Criterios de aceptación`
+#### `Criterios de aceptación`
 - [ ] Si el input está vacío debo ver algún mensaje de error
 - [ ] Si el input está vacío debo ver algún mensaje de error
 - [ ] Debe ser Responsive
 - [ ] Debe verificar que el usuario este logueado para poder publicar
 - [ ] El mensaje debe mostrarse en el timeline sin necesidad de recargar la página
 
-### `Definición de terminado`
+#### `Definición de terminado`
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
 - El diseño visual corresponde al prototipo de alta fidelidad.
@@ -123,7 +123,7 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 ### Tercera
  Como usuario quiero poder editar una publicación, ya que me equivoqué al publicar la hora de la rodada y quiero corregir la hora.
 
-### `Criterios de aceptación`
+#### `Criterios de aceptación`
 - [ ] Al dar click para editar un post, debe cambiar el texto por un input
   que permita editar el texto y luego guardar los cambios.
 - [ ] Al guardar los cambios debe cambiar de vuelta a un texto normal pero con la
@@ -132,7 +132,7 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 - [ ] Se debe verificar que el usuario sea el creador de la publicación para poder editar
 - [ ] El mensaje editado debe mostrarse en el timeline sin necesidad de recargar la página
 
-### `Definición de terminado`
+#### `Definición de terminado`
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
 - El diseño visual corresponde al prototipo de alta fidelidad.
@@ -145,11 +145,11 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 ### Cuarta
  Como usuario, quiero poder eliminar una publicación que hice porque me di cuenta que el evento que compartí ya pasó.
 
-### `Criterios de aceptación`
+#### `Criterios de aceptación`
 - [ ] Poder eliminar un post especifico
 - [ ] Pedir confirmación antes de eliminar un post.
 
-### `Definición de terminado`
+#### `Definición de terminado`
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
 - El diseño visual corresponde al prototipo de alta fidelidad.
@@ -161,13 +161,13 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 ### Quinta
  Como usuario quiero poder darle like a una publicación de un evento que me gustó.
 
-### `Criterios de aceptación`
+#### `Criterios de aceptación`
 - [ ] Poder darle like a una publicación
 - [ ] Poder quitarle like a una publicación
 - [ ] Un usuario puede dar máximo un like en una publicación
 - [ ] Llevar un conteo de los likes
 
-### `Definición de terminado`
+#### `Definición de terminado`
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
 - El diseño visual corresponde al prototipo de alta fidelidad.
