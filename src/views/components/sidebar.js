@@ -59,7 +59,7 @@ const sidebar = {
       </div> 
     </div>
 
-    <!-- Modal Add Structure -->
+    <!-- Modal AddSOS Structure -->
     <div id="modalAddSOS" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>S.O.S.</h4>

@@ -122,8 +122,8 @@ nav .sidenav-trigger {
     margin-top: 26vh;
 }
 
-.card, #modal-add {
-    border-radius: 6px;
+.card, .modal {
+    border-radius: 7px;
 }
 
 .collection {
