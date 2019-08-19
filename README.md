@@ -29,7 +29,7 @@ Comúnmente tendemos a creer la idea, equivocada, de que los automóviles son la
 
 ##User Persona
 
-![Ramona](/src/img/Ramona Díaz.png)
+![Ramona](/src/img/RamonaDiaz.png)
 
 ## Definición del producto
 
@@ -62,11 +62,13 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 ## Historias de Usuario
 
 Como usuario nuevo debo poder crear una cuenta con email y password para poder iniciar sesion. Por otro lado, necesito también tener la opción de iniciar sesión con mi cuenta de Google o Facebook.
+
   **Criterios de aceptación**
 - Si el mail o password no es válido, al momento de logearme, debo poder ver un mensaje de error.
 - Debe ser visible si hay algún mensaje de error.
 - Debo poder ver esta página de creación en Móviles y desktop (responsive).
 - No debe necesitar recargar la página para crear una cuenta (SPA).
+
   **Definición de terminado**
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
