@@ -6,25 +6,27 @@ const shops = {
       <div class="divider"></div>
       <div class="section">
         <h5>Zona sur</h5>
-        <h6>Enbiciados Bike</h6>
-        <p><i class="material-icons tiny">location_on</i> Av. Coyoacán 745 A, Col del Valle Centro, 03100 Ciudad de
-          México, CDMX</p>
-        <p><i class="material-icons tiny">local_phone</i> 01 55 5335 1127</p>
+        <h6>Ciclocros</h6>
+        <p><i class="material-icons tiny">location_on</i> Calle Melchor Pérez de soto, 211
+        COLONIA AMPLIACIÓN MIGUEL HIDALGO TERCERA SECCIÓN (Tlalpan)
+        14250, Tlalpan, CDMX</p>
+        <p><i class="material-icons tiny">local_phone</i> 01 55 5423 7865</p>
       </div>
       <div class="divider"></div>
       <div class="section">
         <h5>Zona norte</h5>
-        <h6>Taller Comunitario Enchulame La Bici</h6>
-        <p><i class="material-icons tiny">location_on</i> Calle Eligio Ancona 79, Sta María la Ribera, 06400 Ciudad de
-          México, CDMX</p>
-        <p><i class="material-icons tiny">local_phone</i> 01 55 7038 9057</p>
+        <h6>Bazzinga</h6>
+        <p><i class="material-icons tiny">location_on</i>Calle Cienfuegos, 850
+        Colonia Lindavista 07300, Gustavo A. Madero, CDMX </p>
+        <p><i class="material-icons tiny">local_phone</i> 01 55 5929 4557</p>
       </div>
       <div class="divider"></div>
       <div class="section">
         <h5>Zona centro</h5>
-        <h6>La Bici Urbana</h6>
-        <p><i class="material-icons tiny">location_on</i> Av. Morelos 70, Juárez, 06600 Ciudad de México, CDMX</p>
-        <p><i class="material-icons tiny">local_phone</i> 01 55 5578 0547</p>
+        <h6>Bici Productos</h6>
+        <p><i class="material-icons tiny">location_on</i>Calle San Pablo, 13
+        Colonia Centro 06090, Cuauhtémoc, CDMX</p>
+        <p><i class="material-icons tiny">local_phone</i> 01 55 3278 2328</p>
       </div>
     </section>
         `;

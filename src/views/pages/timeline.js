@@ -103,14 +103,12 @@ const timeline = {
       `;
       });
     });
-  });
+
 
   const addBtn = document.getElementById('add');
   addBtn.addEventListener('click', () =>{
     savePost();
-  }
-  )
-
+  });
 
     //Inicializando modales   
     const modals = document.querySelectorAll('.modal');
