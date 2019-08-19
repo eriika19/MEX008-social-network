@@ -27,7 +27,7 @@ Según el recuento no oficial realizado por grupos de activistas, en 2018 fallec
 
 Comúnmente tendemos a creer la idea, equivocada, de que los automóviles son la principal amenaza para las personas que usan la bicicleta para transportarse en grandes ciudades. La mala calidad del pavimento, los baches, las alcantarillas abiertas, grietas, las inundaciones y los topes mal hechos, son un riesgo constante para ellos.
 
-##User Persona
+## User Persona
 
 ![Ramona](/src/img/RamonaDiaz.png)
 
@@ -39,29 +39,29 @@ La solución que proponemos para los ciclistas es: Sacbé. Sacbé es un camino r
 
 Sacbé una Red Social para el ciclista que busca mantenerse conectado, crear vínculos con otros ciclistas, mantenerse informado de eventos, rodadas, bloqueos, inundaciones, baches, etc...Y que además le permite solicitar ayuda de otros miembros de la comunidad en caso de algún incidente.
 
-## Prototipo de baja fidelidad
+## Interfaz de usuario / Prototipo de baja fidelidad
 
 Construimos un primer [prototipo](https://marvelapp.com/56f42d4/screen/59966204) de baja fidelidad en MarvelApp.
 
 Los comentarios que obtuvimos acerca de este fueron:
 
--Necesitabamos diferenciar claramente las pantallas de "Iniciar sesión" y "Crear cuenta"
--No se entendía a que se refería la sección "Directorio"
--No se identificaba fácilmente el botón de agregar publicación en la primera ubicación que lo pusimos.
+- Necesitabamos diferenciar claramente las pantallas de "Iniciar sesión" y "Crear cuenta"
+- No se entendía a que se refería la sección "Directorio"
+- No se identificaba fácilmente el botón de agregar publicación en la primera ubicación que lo pusimos.
 
 En consecuencia, decidimos dividir el directorio en dos secciones "Talleres" y "Tiendas" que eran más explicitas. De igual manera, decidimos cambiar la ubicación del botón de "Agreegar publicación" y mostrar dicho botón en el timeline
 
-## Prototipo de alta fidelidad
+## Interfaz de Usuario / Prototipo de alta fidelidad
 
 Tomando en cuenta el feedback anterior, construimos un [prototipo](https://www.figma.com/proto/MMsy7ojEalu6q6QwTFCw5s/Red-social-bike?node-id=53%3A13&scaling=scale-down) de alta fidelidad en Figma.
 
 Los comentarios que obtuvimos sobre este prototipo, fueron en general que era bastante intuitiva. Algunas observaciones fueron acerca de:
--No se intuía en todos los casos que la foto del usuario en la sección superior izquierda desplegaba un menú lateral.
--No resultaba intuitivo el botón de SOS, muchos los confundieron con notificaciones. Además no entendían cual era su función.
+- No se intuía en todos los casos que la foto del usuario en la sección superior izquierda desplegaba un menú lateral.
+- No resultaba intuitivo el botón de SOS, muchos los confundieron con notificaciones. Además no entendían cual era su función.
 
 ## Historias de Usuario
 
-Como usuario nuevo debo poder crear una cuenta con email y password para poder iniciar sesion. Por otro lado, necesito también tener la opción de iniciar sesión con mi cuenta de Google o Facebook.
+1. Como usuario nuevo debo poder crear una cuenta con email y password para poder iniciar sesion. Por otro lado, necesito también tener la opción de iniciar sesión con mi cuenta de Google o Facebook.
 
   **Criterios de aceptación**
 - Si el mail o password no es válido, al momento de logearme, debo poder ver un mensaje de error.
@@ -78,21 +78,79 @@ Como usuario nuevo debo poder crear una cuenta con email y password para poder i
 - La funcionalidad fue probada manualmente.
 - Se hicieron pruebas de usuabilidad y se implementó el feedback si se consideró necesario.
 
-Como usuario, una vez que ya ingrese con mi cuenta, quiero poder crear una publicación para invitar a los otros ciclistas a una rodada
-  **Criterios de aceptación**
-  **Definición de terminado**
+2. Como usuario, una vez que ya ingrese con mi cuenta, quiero poder crear una publicación para invitar a los otros ciclistas a una rodada
 
-Como usuario quiero poder editar una publicación, ya que me equivoqué al publicar la hora de la rodada y quiero corregir la hora.
   **Criterios de aceptación**
-  **Definición de terminado**
+- Si el input está vacío debo ver algún mensaje de error
+- Debe ser Responsive
+- Debe verificar que el usuario este logueado para poder publicar
+- El mensaje debe mostrarse en el timeline sin necesidad de recargar la página
 
-Como usuario, quiero poder eliminar una publicación que hice porque me di cuenta que el evento que compartí ya pasó.
-  **Criterios de aceptación**
   **Definición de terminado**
+- La funcionalidad cumple/satisface los criterios de aceptación.
+- La funcionalidad tiene test unitarios.
+- El diseño visual corresponde al prototipo de alta fidelidad.
+- El código de esta funcionalidad recibió code review.
+- La funcionalidad esta desplegada y pública para ser probada.
+- La funcionalidad fue probada manualmente.
+- Se hicieron pruebas de usuabilidad y se implementó el feedback si se consideró necesario.
 
-Como usuario quiero poder darle like a una publicación de un evento que me gustó.
+3. Como usuario quiero poder editar una publicación, ya que me equivoqué al publicar la hora de la rodada y quiero corregir la hora.
   **Criterios de aceptación**
+- Al dar click para editar un post, debe cambiar el texto por un input
+  que permita editar el texto y luego guardar los cambios.
+- Al guardar los cambios debe cambiar de vuelta a un texto normal pero con la
+  información editada.
+- Debe ser responsive
+- Se debe verificar que el usuario sea el creador de la publicación para poder editar
+- El mensaje editado debe mostrarse en el timeline sin necesidad de recargar la página
   **Definición de terminado**
+- La funcionalidad cumple/satisface los criterios de aceptación.
+- La funcionalidad tiene test unitarios.
+- El diseño visual corresponde al prototipo de alta fidelidad.
+- El código de esta funcionalidad recibió code review.
+- La funcionalidad esta desplegada y pública para ser probada.
+- La funcionalidad fue probada manualmente.
+- Se hicieron pruebas de usuabilidad y se implementó el feedback si se consideró necesario.
+
+
+4. Como usuario, quiero poder eliminar una publicación que hice porque me di cuenta que el evento que compartí ya pasó.
+  **Criterios de aceptación**
+- Poder eliminar un post especifico
+- Pedir confirmación antes de eliminar un post.
+  **Definición de terminado**
+- La funcionalidad cumple/satisface los criterios de aceptación.
+- La funcionalidad tiene test unitarios.
+- El diseño visual corresponde al prototipo de alta fidelidad.
+- El código de esta funcionalidad recibió code review.
+- La funcionalidad esta desplegada y pública para ser probada.
+- La funcionalidad fue probada manualmente.
+- Se hicieron pruebas de usuabilidad y se implementó el feedback si se consideró necesario.
+
+5. Como usuario quiero poder darle like a una publicación de un evento que me gustó.
+  **Criterios de aceptación**
+- Poder darle like a una publicación
+- Poder quitarle like a una publicación
+- Un usuario puede dar máximo un like en una publicación
+- Llevar un conteo de los likes
+  **Definición de terminado**
+- La funcionalidad cumple/satisface los criterios de aceptación.
+- La funcionalidad tiene test unitarios.
+- El diseño visual corresponde al prototipo de alta fidelidad.
+- El código de esta funcionalidad recibió code review.
+- La funcionalidad esta desplegada y pública para ser probada.
+- La funcionalidad fue probada manualmente.
+- Se hicieron pruebas de usuabilidad y se implementó el feedback si se consideró necesario.
+
+## Testing de usabilidad
+
+Con el producto ya desplegado, realizamos algunas [pruebas](https://drive.google.com/open?id=1uJEgWg4g4vBXwpnmU8r6FdViD6aVvzQt) con usuarios.
+Las principales observaciones de los usuarios fueron:
+- La página es rápida
+- El fondo se pone obscuro como si el menú lateral siguiera abierto, y no se quita hasta hasta hacer scroll
+- Al intentar editar a veces no aparece el texto de la publicación que se quiere modificar, en otras ocasiones aparece otro mensaje.
+
+
 
 
 
