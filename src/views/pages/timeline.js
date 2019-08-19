@@ -67,7 +67,6 @@ const timeline = {
       let idDelete, idEdit, idLike;
       const textareaEdit = document.getElementById('textarea-edit');
 
-
       let postList = document.getElementById("post-list");
 
       db.collection("posts").onSnapshot((querySnapshot) => {
