@@ -1,81 +1,81 @@
 // Your web app's Firebase configuration
- var firebaseConfig = {
-   apiKey: "AIzaSyBxJs9j1qM3ULWLVgJ_LqeNZGkGegHOh8o",
-   authDomain: "sacbe-rd.firebaseapp.com",
-   databaseURL: "https://sacbe-rd.firebaseio.com",
-   projectId: "sacbe-rd",
-   storageBucket: "",
-   messagingSenderId: "304589264925",
-   appId: "1:304589264925:web:ed29df87477af218"
- };
- // Initialize Firebase
- firebase.initializeApp(firebaseConfig);
+var firebaseConfig = {
+  apiKey: "AIzaSyBxJs9j1qM3ULWLVgJ_LqeNZGkGegHOh8o",
+  authDomain: "sacbe-rd.firebaseapp.com",
+  databaseURL: "https://sacbe-rd.firebaseio.com",
+  projectId: "sacbe-rd",
+  storageBucket: "",
+  messagingSenderId: "304589264925",
+  appId: "1:304589264925:web:ed29df87477af218"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
- // Initialize the FirebaseUI Widget using Firebase.
- var ui = new firebaseui.auth.AuthUI(firebase.auth());
- var db = firebase.firestore();
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+var db = firebase.firestore();
 
- //UI firebase
- var uiConfig = {
-   callbacks: {
-     signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-       // User successfully signed in.
-       // Return type determines whether we continue the redirect automatically
-       // or whether we leave that to developer to handle.
-       return true;
-     },
-     uiShown: function () {
-       // The widget is rendered.
-       // Hide the loader.
-       document.getElementById('loader').classList.add("hide");
-     }
-   },
-   // Will use popup for IDP Providers sign-in flow instead of the default, redirect. ./#timeline
-   signInFlow: 'popup',
-   signInSuccessUrl: './#/timeline',
-   signInOptions: [
-     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-     firebase.auth.EmailAuthProvider.PROVIDER_ID,
-   ],
-   // Terms of service url.
-   tosUrl: '<your-tos-url>',
-   // Privacy policy url.
-   privacyPolicyUrl: '<your-privacy-policy-url>'
- };
+//UI firebase
+var uiConfig = {
+  callbacks: {
+    signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+      // User successfully signed in.
+      // Return type determines whether we continue the redirect automatically
+      // or whether we leave that to developer to handle.
+      return true;
+    },
+    uiShown: function () {
+      // The widget is rendered.
+      // Hide the loader.
+      document.getElementById('loader').classList.add("hide");
+    }
+  },
+  // Will use popup for IDP Providers sign-in flow instead of the default, redirect. ./#timeline
+  signInFlow: 'popup',
+  signInSuccessUrl: './#/timeline',
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+  ],
+  // Terms of service url.
+  tosUrl: '<your-tos-url>',
+  // Privacy policy url.
+  privacyPolicyUrl: '<your-privacy-policy-url>'
+};
 
- //UI Firebase
- // The start method will wait until the DOM is loaded.
- ui.start('#firebaseui-auth-container', uiConfig);
+//UI Firebase
+// The start method will wait until the DOM is loaded.
+ui.start('#firebaseui-auth-container', uiConfig);
 
- ui.start('#firebaseui-auth-container', {
-   signInOptions: [
-     // List of OAuth providers supported.
-     firebase.auth.EmailAuthProvider.PROVIDER_ID,
-     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-     firebase.auth.FacebookAuthProvider.PROVIDER_ID
-    ],
-  });
-  
+ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    // List of OAuth providers supported.
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID
+  ],
+});
 
-  //Inicializando facebook
-  const provider = new firebase.auth.FacebookAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    const token = result.credential.accessToken;
-    // The signed-in user info.
-    const user = result.user;
-    // ...
-  }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
-  });
+
+//Inicializando facebook
+const provider = new firebase.auth.FacebookAuthProvider();
+firebase.auth().signInWithPopup(provider).then(function (result) {
+  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+  const token = result.credential.accessToken;
+  // The signed-in user info.
+  const user = result.user;
+  // ...
+}).catch(function (error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
 
 
 

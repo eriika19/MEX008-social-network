@@ -87,6 +87,6 @@ window.addEventListener("hashchange", () => {
 });
 window.addEventListener("load", routerApp);
 
-setTimeout(() => {
+setTimeout(() => { 
   document.getElementById('intro-container').classList.add("hide");
-});
+}, 1700);
