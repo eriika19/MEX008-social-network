@@ -96,6 +96,7 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 - Se hicieron pruebas de usuabilidad y se implementó el feedback si se consideró necesario.
 
 3. Como usuario quiero poder editar una publicación, ya que me equivoqué al publicar la hora de la rodada y quiero corregir la hora.
+
   **Criterios de aceptación**
 - Al dar click para editar un post, debe cambiar el texto por un input
   que permita editar el texto y luego guardar los cambios.
@@ -104,6 +105,7 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 - Debe ser responsive
 - Se debe verificar que el usuario sea el creador de la publicación para poder editar
 - El mensaje editado debe mostrarse en el timeline sin necesidad de recargar la página
+
   **Definición de terminado**
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
@@ -115,9 +117,11 @@ Los comentarios que obtuvimos sobre este prototipo, fueron en general que era ba
 
 
 4. Como usuario, quiero poder eliminar una publicación que hice porque me di cuenta que el evento que compartí ya pasó.
+
   **Criterios de aceptación**
 - Poder eliminar un post especifico
 - Pedir confirmación antes de eliminar un post.
+
   **Definición de terminado**
 - La funcionalidad cumple/satisface los criterios de aceptación.
 - La funcionalidad tiene test unitarios.
@@ -149,6 +153,8 @@ Las principales observaciones de los usuarios fueron:
 - La página es rápida
 - El fondo se pone obscuro como si el menú lateral siguiera abierto, y no se quita hasta hasta hacer scroll
 - Al intentar editar a veces no aparece el texto de la publicación que se quiere modificar, en otras ocasiones aparece otro mensaje.
+- Las publicaciones se ordenan aleatoriamente
+
 
 
 
