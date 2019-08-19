@@ -15,7 +15,7 @@
 - [Historias de Usuario](#historias-de-usuario)
 - [Testing de usabilidad](#testing-de-usabilidad)
 - [Producto final](#producto-final)
-- [Próximos alcances](#próximos-alcances)
+- [Código](#código)
 
 ---
 
@@ -190,7 +190,14 @@ Planeamos tomar en cuenta estos comentarios para futuros alcances de nuestro pro
 
 ## Producto final
 
-## Próximos alcances
+![p1](/src/img/readme/p1.png)
+![p2](/src/img/readme/p2.png)
+![p3](/src/img/readme/p3.png)
+
+## Código
+
+![codigo](/src/img/readme/codigo.png)
+
 
 
 
