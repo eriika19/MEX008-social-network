@@ -15,11 +15,6 @@ import footer from "./views/components/footer.js";
 //Importando servicios
 import Utils from "./services/Utils.js";
 
-// Initial Storage
-/*localStorage.setItem(publicationList",
-    localStorage.getItem("publicationList") || JSON.stringify([])
-  );*/
-
 const routes = {
   "/intro": intro,
   "/": welcome,
@@ -37,19 +32,7 @@ const routerApp = async () => {
 
   introContainer.innerHTML = await intro.render();
   welcomeContainer.innerHTML = await welcome.render();
-
-  // const request = Utils.pageRequestURL();
-
-  // let parsedURL =
-  //   (request.resource ? `/${request.resource}` : "/") +
-  //   (request.verb ? "/" + request.verb : "") +
-  //   (request.id ? "/:id" : "");
-
-  // let page = routes[parsedURL] ? routes[parsedURL] : error404;
-  // sectionContainer.innerHTML = await page.render();
-  // await page.after_render();
 };
-
 
 //Función para inicializar contenido
 const stateChange = async () => {
@@ -77,82 +60,33 @@ const stateChange = async () => {
 };
 
 //funcion para comprobar estado de usuario
-firebase.auth().onAuthStateChanged(function (user) {
+  firebase.auth().onAuthStateChanged( (user) => {
+    if (user) {
+      document.getElementById('signup-signin').classList.add("hide");
+      document.getElementById('intro-container').classList.add("hide");
+      console.log("El usuario ha entrado a sesión");
+      stateChange();
+    } else {
+      document.getElementById('signup-signin').classList.remove("hide");
+      document.getElementById('section-container').innerHTML = "";
+      document.getElementById("sidebar-container").innerHTML = "";
+      document.getElementById('footer-nav').innerHTML = "";
+      routerApp();
+      console.log('El usuario está fuera de sesión')
+    }
+  });
+
+window.addEventListener("hashchange", () => {
+   const user = firebase.auth().currentUser;
+
   if (user) {
-    document.getElementById('signup-signin').classList.add("hide");
-    document.getElementById('intro-container').classList.add("hide");
-    console.log("El usuario ha entrado a sesión");
     stateChange();
   } else {
-    document.getElementById('signup-signin').classList.remove("hide");
-    document.getElementById('section-container').innerHTML = "";
-    document.getElementById("sidebar-container").innerHTML = "";
-    document.getElementById('footer-nav').innerHTML = "";
     routerApp();
-    console.log('El usuario está fuera de sesión')
   }
 });
-
-
-
-
-
-
-
-/*-- para hacker-edition, puede servir un poco para la funcionalidad de 'like'(publication-list solo aparece en timeline)
-    const arrayLi = Array.from(
-        document.querySelectorAll("#publication-list ul>li")
-      );
-      // console.log(li);
--- posible inicio de adapatacion para 'like'
-      arrayLi.forEach(item => {
-        item.addEventListener("click", liked);
-      });*/
-
-/*posible funcion para agregar publicacion
-   const addPublication = e => {
-      e.preventDefault();
-      const inputText = document.getElementById("input-text");
-      const arrayPublication = [...JSON.parse(localStorage.getItem("publicationList"))];
-      const objPublication = {
-        user: `${user}`,
-        value: inputText.value,
-        date: `${new Date().getTime()`
-        status: "Normal"}`,
-      };
-    arrayPublication.push(objPublication);
-   localStorage.setItem("publicationList", JSON.stringify(arrayPublication));
-  routerApp();
-    };*/
-
-/* para hacker-edition'checar like'
-    const like = e => {
-        let arrayTask = Utils.getTimeline();
-      
-        if (e.target.tagName == "TEXT") {
-          if (e.target.checked) {
-            arrayTask = arrayTask.map(item => {
-              if (item.id == e.target.id) {
-                item.status = "Liked";
-              }
-              return item;
-            });
-          } else {
-            arrayTask = arrayTask.map(item => {
-              if (item.id == e.target.id) {
-                item.status = "Normal";
-              }
-              return item;
-            });
-          }
-        }
-        localStorage.setItem("publicationList", JSON.stringify(arrayPublication));
-        routerApp();
-      };*/
-
-window.addEventListener("hashchange", routerApp);
 window.addEventListener("load", routerApp);
 
 setTimeout(() => {
   document.getElementById('intro-container').classList.add("hide");
-}, 1700);
+});

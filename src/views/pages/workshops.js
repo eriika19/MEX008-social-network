@@ -2,7 +2,7 @@ const workshops = {
   render: async () => {
     return `
     <section id="workshops">
-      <h3>Talleres</h3>
+    <h3>Tiendas</h3>
       <div class="divider"></div>
       <div class="section">
         <h5>Zona sur</h5>

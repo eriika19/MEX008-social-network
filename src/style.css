@@ -23,7 +23,6 @@ body {
 }
 
 #sidebar-container {
-    /*    top: 0;*/
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -64,8 +63,6 @@ h5 {
 
 footer {
     height: 7vh;
-    /* background-color: #73ECEF; */
-
 }
 
 /* SECCIONES */
@@ -94,11 +91,7 @@ main section {
 #firebaseui-auth-container {
     margin-top: 1.8rem;
 }
-/*
-.sidenav-overlay{
-    display: none !important;
-}
-*/
+
 /* BOTONES */
 .firebaseui-idp-button {
     border-radius: 1rem;
@@ -129,8 +122,8 @@ nav .sidenav-trigger {
     margin-top: 26vh;
 }
 
-.card, #modal-add {
-    border-radius: 6px;
+.card, .modal {
+    border-radius: 7px;
 }
 
 .collection {
@@ -188,8 +181,6 @@ figure {
     width: 10rem;
     padding-top: 1rem;
 }
-
-
 
 
 @media only screen and (min-width: 760px) {
