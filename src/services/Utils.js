@@ -107,7 +107,46 @@ const Utils = {
   }).catch(function (error) {
   console.log("Error getting document:", error);
 });
-  }
+  },
+
+  sosPost:  () => {
+    const text = document.getElementById('textarea-sos').value;
+    let user = firebase.auth().currentUser;
+    let edit = '';
+    let verified = `<a class="waves-effect"><i class="material-icons tiny">report_problem</i></a>`;
+    let photoUrl = '';
+    let likesArr = [];
+    let name;
+    
+    if (user != null) {
+      name = user.displayName;
+      if (user.photoUrl !== null) {
+        photoUrl = user.photoURL; 
+      };
+      if (user.emailVerified == true) {
+        verified = `<a class="waves-effect"><i class="material-icons tiny">verified_user</i><i class="material-icons tiny">report_problem</i></a>`; 
+      };
+    }
+  
+    db.collection("posts").add({
+      uid: user.uid,
+      displayName: name,
+      textPost: text,
+      photo: photoUrl,
+      emailVerified: verified,
+      date: new Date().getTime(),
+      editDate: edit,
+      likes: likesArr,
+      status: 'no-like',
+  })
+  .then(function(post) {
+    document.getElementById('textarea-post').value = '';
+    console.log("Post S.O.S. written with ID: ", post.id);
+  })
+  .catch(function(error) {
+      console.error("Error adding post: ", error);
+  });
+  },
 };
 
 export default Utils;

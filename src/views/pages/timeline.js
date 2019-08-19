@@ -13,7 +13,6 @@ const timeline = {
     <div id="post-list" class="col s12 m7">
     <h6>Cargando...</h6>     
       <!-- Post cards -->
-
     
       </div>
       <!-- Modal Confirmation-delete Structure -->
