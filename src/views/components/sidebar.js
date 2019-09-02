@@ -93,32 +93,28 @@ const sidebar = {
         }
       ));
     }
-    
- 
-    /*Boilerplate map initialization code starts below: */
-    
-    //Step 1: initialize communication with the platform
-       // Initialize the platform object:
-       var platformSos = new H.service.Platform({
-        'apikey': 'b7CvitQdD24O0hV1dxkZtp5DWvZdnnhVkD-W70ZTy4Y'
+
+
+    var platformSOS = new H.service.Platform({
+      'apikey': 'b7CvitQdD24O0hV1dxkZtp5DWvZdnnhVkD-W70ZTy4Y'
+      });
+  
+      // Obtain the default map types from the platform object
+      var maptypes = platformSOS.createDefaultLayers();
+  
+      // Instantiate (and display) a map object:
+      var mapSOS = new H.Map(
+      document.getElementById('sos-map'),
+      maptypes.vector.normal.map,
+      {
+        center: {lat:19.4284700, lng:-99.1276600},
+        zoom: 10,
+        pixelRatio: window.devicePixelRatio || 1
       });
     
-    var defaultLayers = platformSos.createDefaultLayers();
-    
-    //Step 2: initialize a map - this map is centered over Europe
-      // Instantiate (and display) a map object:
-      var sosMap = new H.Map(
-        document.getElementById('sos-map'),
-        defaultLayers.vector.normal.map,
-        {
-          zoom: 10,
-          center: {lat:19.4284700, lng:-99.1276600}
-        });
-    // add a resize listener to make sure that the map occupies the whole container
-    // map.addEventListener('resize', () => map.getViewPort().resize());
 
     // Now use the map as required...
-/* addCircleToMap(sosMap);   */
+ addCircleToMap(mapSOS);   
     
     const addSOS = document.getElementById('add-sos');
     addSOS.addEventListener('click', () => {
