@@ -52,6 +52,7 @@ const sidebar = {
       <div class="modal-content">
         <h5>¡${name} has presionado el botón de emergencia!</h4>
         <h6>Tu ubicación y alerta serán enviadas inmediatamente a todos los ciclistas cercanos a ti</h6>
+      <div id="sos-map" class="map"></div>
       </div>
       <div class="modal-footer">
         <a class="modal-close waves-effect waves-green btn-flat">Entendido</a>
@@ -77,6 +78,48 @@ const sidebar = {
     `;
   },
   after_render: () => {
+     function addCircleToMap(map){
+      map.addObject(new H.map.Circle(
+        // The central point of the circle
+        {lat:19.4212752, lng:-99.1653181},
+        // The radius of the circle in meters
+        1000,
+        {
+          style: {
+            strokeColor: 'rgba(55, 85, 170, 0.6)', // Color of the perimeter
+            lineWidth: 2,
+            fillColor: 'rgba(115, 236, 239, 0.7)'  // Color of the circle
+          }
+        }
+      ));
+    }
+    
+ 
+    /*Boilerplate map initialization code starts below: */
+    
+    //Step 1: initialize communication with the platform
+       // Initialize the platform object:
+       var platformSos = new H.service.Platform({
+        'apikey': 'b7CvitQdD24O0hV1dxkZtp5DWvZdnnhVkD-W70ZTy4Y'
+      });
+    
+    var defaultLayers = platformSos.createDefaultLayers();
+    
+    //Step 2: initialize a map - this map is centered over Europe
+      // Instantiate (and display) a map object:
+      var sosMap = new H.Map(
+        document.getElementById('sos-map'),
+        defaultLayers.vector.normal.map,
+        {
+          zoom: 10,
+          center: {lat:19.4284700, lng:-99.1276600}
+        });
+    // add a resize listener to make sure that the map occupies the whole container
+    // map.addEventListener('resize', () => map.getViewPort().resize());
+
+    // Now use the map as required...
+/* addCircleToMap(sosMap);   */
+    
     const addSOS = document.getElementById('add-sos');
     addSOS.addEventListener('click', () => {
       Utils.sosPost();
